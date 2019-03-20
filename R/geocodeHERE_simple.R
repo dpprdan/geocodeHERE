@@ -35,6 +35,8 @@ geocodeHERE_simple <-
 
   if(length(response$Response$View) > 0){
     ret <- response$Response$View[[1]]$Result[[1]]$Location$DisplayPosition
+    ml <- list(match_level = response$Response$View[[1]]$Result[[1]]$MatchLevel)
+    ret <- c(ret, ml)
   }else{
     ret <- list(latitude = NA_character_, longitude = NA_character_)
   }
