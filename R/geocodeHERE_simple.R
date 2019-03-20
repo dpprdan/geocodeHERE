@@ -12,7 +12,12 @@
 #' geocodeHERE_simple("chicago")
 #' geocodeHERE_simple("wrigley field chicago IL")
 #' geocodeHERE_simple("233 S Wacker Dr, Chicago, IL 60606")
-geocodeHERE_simple <- function(search, App_id="", App_code=""){
+geocodeHERE_simple <-
+  function(
+    search,
+    App_id = Sys.getenv("HERE_APP_ID"),
+    App_code = Sys.getenv("HERE_APP_CODE")
+  ){
   if(!is.character(search)){stop("'search' must be a character string")}
   if(!is.character(App_id)){stop("'App_id' must be a character string")}
   if(!is.character(App_code)){stop("'App_code' must be a character string")}
