@@ -36,9 +36,9 @@ geocodeHERE_simple <-
   if(length(response$Response$View) > 0){
     ret <- response$Response$View[[1]]$Result[[1]]$Location$DisplayPosition
   }else{
-    ret <- NA
+    ret <- list(latitude = NA_character_, longitude = NA_character_)
   }
-  return(ret)
+  as.data.frame(ret, stringsAsFactors = FALSE)
 }
 
 
